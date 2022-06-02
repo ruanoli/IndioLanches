@@ -1,0 +1,18 @@
+﻿@model LancheListViewModel
+
+<h1>@Model.CategoriAtual</h1>
+
+@*    <h2 class="tituloLanche">@ViewData["Titulo"]</h2>
+<div class="headerDisplay">
+        @ViewData["Data"] @*Tempo de vida da ViewData é o request. Se atualizarmos a página perdemos os dados.      
+        <h4>@ViewBag.Total @ViewBag.TotalLanches</h4>
+</div>*@
+    <hr />
+
+<div class="container">
+    <div class="row">
+@foreach(var lanche in Model.Lanches){
+    <partial name = "_LachesResumo" for = "@lanche"/>
+}
+    </div>
+</div>
